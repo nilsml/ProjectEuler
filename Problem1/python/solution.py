@@ -8,11 +8,9 @@
 import sys
 
 def calcImperative():
-	sum = 0
-	for i in range(0, 1000):
-		if i % 3 == 0 or i % 5 == 0:
-			sum = sum + i
-	print(sum)
+	total = 0
+	total = sum(i for i in xrange(1000) if i % 3 == 0 or i % 5 == 0)
+	print(total)
 
 def calcFunctional():
 	values = filter(lambda x: x%3 == 0 or x%5 == 0, range(0, 1000))

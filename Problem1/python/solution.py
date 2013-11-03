@@ -7,15 +7,21 @@
 
 import sys
 
-def calc():
+def calcImperative():
 	sum = 0
 	for i in range(0, 1000):
 		if i % 3 == 0 or i % 5 == 0:
 			sum = sum + i
 	print(sum)
 
+def calcFunctional():
+	values = filter(lambda x: x%3 == 0 or x%5 == 0, range(0, 1000))
+	sum = reduce(lambda x, y: x+y, values)
+	print(sum)
+
 def main(args):
-    calc()
+    calcImperative()
+    calcFunctional()
 
 if __name__ == '__main__':
     main(sys.argv)
